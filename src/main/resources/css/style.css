@@ -1,0 +1,715 @@
+/* Root and Background Styling */
+#anchorPaneAddBook {
+    -fx-background-color: linear-gradient(to bottom right, #f0f8ff, #d1e9ff);
+}
+
+/* Background Rectangle Styling */
+#backgroundRect {
+    -fx-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 20, 0, 0, 0);
+}
+
+/* Main Container Styling */
+.main-container {
+    -fx-background-color: transparent;
+    -fx-padding: 20px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+}
+
+/* Title Label Styling */
+.title-label {
+    -fx-text-fill: #1e90ff;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Form Field Styling */
+.form-field {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #1e90ff;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-prompt-text-fill: #a9a9a9;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Arial';
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.form-field:focused {
+    -fx-border-color: #00bfff;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(30, 144, 255, 0.3), 10, 0, 0, 0);
+}
+
+/* Button Styling */
+.action-button {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #1e90ff;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Arial';
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+}
+
+.action-button:hover {
+    -fx-background-color: #00bfff;
+    -fx-cursor: hand;
+}
+
+.action-button:pressed {
+    -fx-background-color: #4682b4;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
+
+/* Root and Background Styling */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #6a11cb, #2575fc);
+}
+
+/* Background Rectangle Styling */
+.background-rect {
+    -fx-fill: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 20, 0, 0, 0);
+}
+
+/* Main Container Styling */
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 20, 0, 0, 0);
+    -fx-padding: 30px;
+}
+
+/* Title Label Styling */
+.title-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Section Label Styling */
+.section-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Detail Label Styling */
+.detail-label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Arial';
+}
+
+/* Book Image Styling */
+.book-image {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* ChoiceBox Styling */
+.form-choicebox {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #2575fc;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-prompt-text-fill: #a9a9a9;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Arial';
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.form-choicebox:focused {
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(106, 17, 203, 0.3), 10, 0, 0, 0);
+}
+
+/* Button Styling */
+.action-button {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #2575fc;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: 'Arial';
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #6a11cb;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 15, 0, 0, 0);
+}
+
+.action-button:pressed {
+    -fx-background-color: #1e3c72;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 20, 0, 0, 0);
+}
+
+/* Root and Background Styling */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #6a11cb, #2575fc);
+}
+
+/* Background Rectangle Styling */
+.background-rect {
+    -fx-fill: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 20, 0, 0, 0);
+}
+
+/* Main Container Styling */
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 0, 0);
+    -fx-padding: 20px;
+}
+
+/* Title Label Styling */
+.title-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Section Label Styling */
+.section-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Detail Label Styling */
+.detail-label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Arial';
+}
+
+/* Book Image Styling */
+.book-image {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* ChoiceBox Styling */
+.form-choicebox {
+    -fx-pref-width: 500px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #2575fc;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-prompt-text-fill: #a9a9a9;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Arial';
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.form-choicebox:focused {
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(106, 17, 203, 0.3), 10, 0, 0, 0);
+}
+
+/* Button Styling */
+.action-button {
+    -fx-pref-width: 500px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #2575fc;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Arial';
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #6a11cb;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 15, 0, 0, 0);
+}
+
+.action-button:pressed {
+    -fx-background-color: #1e3c72;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 20, 0, 0, 0);
+}
+
+
+/* Root and Background Styling */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #6a11cb, #2575fc);
+}
+
+/* Background Rectangle Styling */
+.background-rect {
+    -fx-fill: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 20, 0, 0, 0);
+}
+
+/* Main Container Styling */
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 0, 0);
+    -fx-padding: 20px;
+}
+
+/* Title Label Styling */
+.title-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Section Label Styling */
+.section-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Detail Label Styling */
+.detail-label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Arial';
+}
+
+/* Book Image Styling */
+.book-image {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* ChoiceBox Styling */
+.form-choicebox {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #2575fc;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-prompt-text-fill: #a9a9a9;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Arial';
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.form-choicebox:focused {
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(106, 17, 203, 0.3), 10, 0, 0, 0);
+}
+
+/* Button Styling */
+.action-button {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #2575fc;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Arial';
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #6a11cb;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 15, 0, 0, 0);
+}
+
+.action-button:pressed {
+    -fx-background-color: #1e3c72;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 20, 0, 0, 0);
+}
+
+/* Root and Background Styling */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #6a11cb, #2575fc);
+}
+
+/* Background Rectangle Styling */
+.background-rect {
+    -fx-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 20, 0, 0, 0);
+}
+
+/* Main Container Styling */
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 15, 0, 0, 0);
+    -fx-padding: 20px;
+}
+
+/* Title Label Styling */
+.title-label {
+    -fx-text-fill: #2575fc;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+/* Form Field Styling */
+.form-field {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #2575fc;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-prompt-text-fill: #a9a9a9;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Arial';
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.form-field:focused {
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(106, 17, 203, 0.3), 10, 0, 0, 0);
+}
+
+/* ChoiceBox Styling */
+.form-choicebox {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #2575fc;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-prompt-text-fill: #a9a9a9;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Arial';
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.form-choicebox:focused {
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(106, 17, 203, 0.3), 10, 0, 0, 0);
+}
+
+/* Button Styling */
+.action-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #2575fc;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Arial';
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #6a11cb;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 15, 0, 0, 0);
+}
+
+.action-button:pressed {
+    -fx-background-color: #1e3c72;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 20, 0, 0, 0);
+}
+
+/* Delete Button Styling */
+.delete-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #ff4d4d;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Arial';
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-background-color: #ff1a1a;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 15, 0, 0, 0);
+}
+
+.delete-button:pressed {
+    -fx-background-color: #cc0000;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 20, 0, 0, 0);
+}
+
+.header-bar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10px;
+}
+
+.search-field {
+    -fx-font-size: 14px;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.nav-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 15px;
+    -fx-background-radius: 5px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.date-label, .time-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 0 10px;
+}
+
+.content-pane {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 15px;
+}
+
+.footer-bar {
+    -fx-fill: #8e44ad;
+}
+/* General Styling */
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-font-family: "Arial";
+}
+
+/* Top Bar */
+.top-bar {
+    -fx-padding: 10px;
+    -fx-background-color: #282c34;
+    -fx-alignment: center;
+}
+
+.search-box {
+    -fx-pref-width: 200px;
+    -fx-background-radius: 15;
+    -fx-padding: 5px;
+}
+
+.date-label, .time-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    -fx-padding: 20px;
+}
+
+.info-card {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 5);
+}
+
+.info-card:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.card-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.card-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+/* Set the background of the root pane */
+.root {
+    -fx-background-color: #C0D2F9; /* Light blue background */
+}
+
+/* Style for TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 10, 0, 0, 5);
+}
+
+/* Style for column headers */
+.table-view .column-header-background {
+    -fx-background-color: #6366F1; /* Purple header */
+    -fx-background-radius: 10px 10px 0px 0px;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+/* Header text */
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Table rows */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Alternate row color */
+.table-row-cell:odd {
+    -fx-background-color: #F8F9FD; /* Light grayish-blue */
+}
+
+/* Hover effect */
+.table-row-cell:hover {
+    -fx-background-color: #E1E5FE; /* Light purple hover */
+}
+
+/* Selected row */
+.table-row-cell:selected {
+    -fx-background-color: #D0D4FF; /* Slightly darker purple */
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+/* Style for table cells */
+.table-cell {
+    -fx-padding: 10px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Remove focus ring around selected row */
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: black;
+}
+
+/* Style for scrollbar */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #aaa;
+    -fx-background-radius: 5px;
+}
+/* Set the background of the root pane */
+.root {
+    -fx-background-color: #C0D2F9; /* Light blue background */
+}
+
+/* Style for TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 10, 0, 0, 5);
+}
+
+/* Style for column headers */
+.table-view .column-header-background {
+    -fx-background-color: #6366F1; /* Purple header */
+    -fx-background-radius: 2px 2px 0px 0px;
+}
+
+
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+/* Header text */
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Table rows */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Alternate row color */
+.table-row-cell:odd {
+    -fx-background-color: #F8F9FD; /* Light grayish-blue */
+}
+
+/* Hover effect */
+.table-row-cell:hover {
+    -fx-background-color: #E1E5FE; /* Light purple hover */
+}
+
+/* Selected row */
+.table-row-cell:selected {
+    -fx-background-color: #D0D4FF; /* Slightly darker purple */
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+/* Style for table cells */
+.table-cell {
+    -fx-padding: 10px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Remove focus ring around selected row */
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: black;
+}
+
+/* Style for scrollbar */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #aaa;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #777;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #777;
+}

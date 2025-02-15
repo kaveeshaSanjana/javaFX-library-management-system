@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneAddBook" prefHeight="431.0" prefWidth="792.0" styleClass="background-rect" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user_management.UdateAndDeletePageController">
+    <children>
+        <!-- Background Rectangle -->
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="401.0" layoutX="227.0" layoutY="15.0" stroke="TRANSPARENT" styleClass="background-rect" />
+
+        <!-- Main Container -->
+        <VBox alignment="CENTER" layoutX="250.0" layoutY="30.0" prefHeight="371.0" prefWidth="300.0" spacing="15.0" styleClass="main-container">
+            <children>
+                <!-- Title Label -->
+                <Label styleClass="title-label" text="Manage  User">
+                    <font>
+                        <Font name="Arial" size="28.0" />
+                    </font>
+                </Label>
+            <JFXComboBox fx:id="comboUserName" onAction="#cmbUserNamesOnAction" prefHeight="27.0" prefWidth="262.0" styleClass="form-choicebox" />
+
+                <!-- Form Fields -->
+                <TextField fx:id="txtName" promptText="Name" styleClass="form-field" />
+                <TextField fx:id="txtId" promptText="NIC" styleClass="form-field" />
+                <TextField fx:id="txtTel" promptText="Telephone" styleClass="form-field" />
+                <TextField fx:id="txtMembership" disable="true" promptText="Membership Date" styleClass="form-field" />
+
+                <!-- Buttons -->
+                <Button onAction="#btnUpdateUserOnAction" styleClass="action-button" text="Update Details" />
+                <Button onAction="#btnDeleteUserOnAction" styleClass="delete-button" text="Delete User" />
+            </children>
+            <padding>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

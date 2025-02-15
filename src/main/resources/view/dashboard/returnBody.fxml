@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dahsboard.ReturnBodyController">
+    <top>
+        <HBox prefHeight="134.0" prefWidth="850.0">
+            <children>
+                <Pane prefHeight="120.0" prefWidth="852.0" style="-fx-background-color: #ffffea;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="45.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="50.0" prefWidth="342.0" styleClass="background-rect" text="Return  Management">
+                            <font>
+                                <Font name="Times New Roman" size="36.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="3.0" layoutY="48.0" prefHeight="28.0" prefWidth="238.0" styleClass="background-rect" text="Manage Your Books in heare">
+                            <font>
+                                <Font name="Times New Roman" size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchField" layoutX="528.0" layoutY="31.0" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
+                        <Button fx:id="btnBurrowAndHandOver1" layoutX="694.0" layoutY="33.0" onAction="#btnReturnOnAction" prefHeight="26.0" prefWidth="128.0" styleClass="nav-button" text="New Return" />
+                    </children></Pane>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane fx:id="burrowbookAnchorPanBody" prefHeight="522.0" prefWidth="853.0" styleClass="content-pane">
+            <children>
+                <TableView fx:id="tblBooks" layoutX="28.0" layoutY="50.0" prefHeight="330.0" prefWidth="794.0">
+                    <columns>
+                        <TableColumn fx:id="colBook" prefWidth="215.20001792907715" text="Book" />
+                        <TableColumn fx:id="colUser" prefWidth="184.800048828125" text="Burrower" />
+                        <TableColumn fx:id="colBurrowDate" prefWidth="142.39993286132812" text="Burrow Date" />
+                        <TableColumn fx:id="colReturnDate" prefWidth="132.0" text="Return Date" />
+                        <TableColumn fx:id="colFine" prefWidth="95.2000732421875" text="Fine" />
+                    </columns>
+                </TableView>
+                <Label alignment="CENTER" layoutX="28.0" layoutY="12.0" prefHeight="38.0" prefWidth="127.0" styleClass="background-rect" text="All Records">
+                    <font>
+                        <Font name="Times New Roman" size="25.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="152.0" layoutY="12.0" opacity="0.64" prefHeight="38.0" prefWidth="47.0" styleClass="background-rect" text="40">
+                    <font>
+                        <Font name="Times New Roman" size="25.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

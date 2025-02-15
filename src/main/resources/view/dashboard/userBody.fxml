@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="838.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dahsboard.userBodyFormController">
+    <top>
+        <HBox prefHeight="103.0" prefWidth="850.0">
+            <children>
+                <Pane prefHeight="103.0" prefWidth="840.0" style="-fx-background-color: #ffffea;" HBox.hgrow="ALWAYS">
+               <children>
+                      <TextField fx:id="searchField" layoutX="495.0" layoutY="30.0" prefHeight="22.0" prefWidth="160.0" promptText="Search..." styleClass="search-field">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </TextField>
+                  <JFXButton alignment="CENTER_RIGHT" layoutX="726.0" layoutY="30.0" onAction="#btnAddUserOnAction" prefHeight="30.0" prefWidth="92.0" ripplerFill="#d1d1d1" style="-fx-background-color: #a2d2ff;" text="Add User">
+                     <font>
+                        <Font name="Times New Roman Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="734.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/addUser.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="661.0" layoutY="30.0" onAction="#btnUpdateUserOnAction" prefHeight="30.0" prefWidth="58.0" ripplerFill="#d1d1d1" style="-fx-background-color: #caffbf;" text="Update">
+                     <font>
+                        <Font name="Times New Roman Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="20.0" layoutY="22.0" prefHeight="40.0" prefWidth="282.0" text="User Management">
+                     <font>
+                        <Font name="Times New Roman" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="26.0" layoutY="56.0" prefHeight="28.0" prefWidth="277.0" text="Manage your Library Users and their accounts in  hear">
+                     <font>
+                        <Font name="Times New Roman" size="12.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <JFXBadge />
+            </children>
+        </HBox>
+    </top>
+   <left>
+        <AnchorPane fx:id="userAnchorPanBody" prefHeight="497.0" prefWidth="815.0" style="-fx-background-color: white;" styleClass="content-pane" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tblUser" layoutX="39.0" layoutY="42.0" prefHeight="344.0" prefWidth="766.0" stylesheets="@../../css/style.css">
+              <columns>
+                <TableColumn fx:id="colName" prefWidth="251.20002365112305" text="Name" />
+                <TableColumn fx:id="colNic" minWidth="0.0" prefWidth="165.5999755859375" text="NIC" />
+                  <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="159.20001220703125" text="Register Date" />
+                  <TableColumn fx:id="colTele" minWidth="0.0" prefWidth="153.5999755859375" text="Telephone " />
+              </columns>
+               <styleClass>
+                  <String fx:value="table-row-cell" />
+                  <String fx:value="top-bar" />
+               </styleClass>
+            </TableView>
+            <Label layoutX="43.0" layoutY="4.0" prefHeight="40.0" prefWidth="90.0" text="All Users">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="132.0" layoutY="4.0" opacity="0.44" prefHeight="40.0" prefWidth="31.0" text="40">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton alignment="CENTER_RIGHT" layoutX="389.0" layoutY="397.0" onAction="#btnAddUserOnAction" prefHeight="30.0" prefWidth="12.0" ripplerFill="#d1d1d1" style="-fx-background-color: #a2d2ff;" text="&lt;">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER_RIGHT" layoutX="432.0" layoutY="397.0" onAction="#btnAddUserOnAction" prefHeight="30.0" prefWidth="12.0" ripplerFill="#d1d1d1" style="-fx-background-color: #a2d2ff;" text="&gt;">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER_RIGHT" layoutX="723.0" layoutY="397.0" onAction="#btnDeleteUserOnAction" prefHeight="30.0" prefWidth="81.0" ripplerFill="#d1d1d1" style="-fx-background-color: #ff6361;" text="Delete">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="732.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/deleteIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
