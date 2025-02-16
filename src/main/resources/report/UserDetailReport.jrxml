@@ -1,0 +1,233 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Blank_A4" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c8c9440-2334-4d97-ae30-1161f0e7ccb6">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<parameter name="library_id"/>
+	<parameter name="user_nic"/>
+	<query language="SQL"><![CDATA[SELECT *
+FROM library_user
+INNER JOIN  user 
+ON library_user.userNic = user.nic
+INNER JOIN burrow_book
+ON burrow_book.nic = user.nic 
+INNER JOIN return_book
+ON return_book.usernic = user.nic
+INNER JOIN book
+ON book.isbn = burrow_book.isbn
+WHERE library_user.libraryId = $P{library_id}
+AND library_user.isEnable = true
+AND library_user.usernic = $P{user_nic} ]]></query>
+	<field name="libraryId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="libraryId"/>
+		<property name="com.jaspersoft.studio.field.label" value="libraryId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="library_user"/>
+	</field>
+	<field name="usernic" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="usernic"/>
+		<property name="com.jaspersoft.studio.field.label" value="usernic"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="library_user"/>
+	</field>
+	<field name="registerDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="registerDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="registerDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="library_user"/>
+	</field>
+	<field name="isEnable" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="isEnable"/>
+		<property name="com.jaspersoft.studio.field.label" value="isEnable"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="library_user"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<field name="nic" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nic"/>
+		<property name="com.jaspersoft.studio.field.label" value="nic"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<field name="telephone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telephone"/>
+		<property name="com.jaspersoft.studio.field.label" value="telephone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<field name="ISBN" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ISBN"/>
+		<property name="com.jaspersoft.studio.field.label" value="ISBN"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="burrow_book"/>
+	</field>
+	<field name="COLUMN_9" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nic"/>
+		<property name="com.jaspersoft.studio.field.label" value="nic"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="burrow_book"/>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="date"/>
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="burrow_book"/>
+	</field>
+	<field name="COLUMN_11" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="libraryId"/>
+		<property name="com.jaspersoft.studio.field.label" value="libraryId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="burrow_book"/>
+	</field>
+	<field name="COLUMN_12" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="isEnable"/>
+		<property name="com.jaspersoft.studio.field.label" value="isEnable"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="burrow_book"/>
+	</field>
+	<field name="returnId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="returnId"/>
+		<property name="com.jaspersoft.studio.field.label" value="returnId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="return_book"/>
+	</field>
+	<field name="COLUMN_14" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ISBN"/>
+		<property name="com.jaspersoft.studio.field.label" value="ISBN"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="return_book"/>
+	</field>
+	<field name="userNic" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="userNic"/>
+		<property name="com.jaspersoft.studio.field.label" value="userNic"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="return_book"/>
+	</field>
+	<field name="COLUMN_16" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="date"/>
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="return_book"/>
+	</field>
+	<field name="COLUMN_17" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="libraryId"/>
+		<property name="com.jaspersoft.studio.field.label" value="libraryId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="return_book"/>
+	</field>
+	<field name="COLUMN_18" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="isEnable"/>
+		<property name="com.jaspersoft.studio.field.label" value="isEnable"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="return_book"/>
+	</field>
+	<field name="COLUMN_19" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ISBN"/>
+		<property name="com.jaspersoft.studio.field.label" value="ISBN"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="book"/>
+	</field>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="book"/>
+	</field>
+	<field name="Author" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Author"/>
+		<property name="com.jaspersoft.studio.field.label" value="Author"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="book"/>
+	</field>
+	<field name="genre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="genre"/>
+		<property name="com.jaspersoft.studio.field.label" value="genre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="book"/>
+	</field>
+	<group name="libraryId">
+		<expression><![CDATA[$F{libraryId}]]></expression>
+	</group>
+	<group name="usernic">
+		<expression><![CDATA[$F{usernic}]]></expression>
+	</group>
+	<group name="registerDate">
+		<expression><![CDATA[$F{registerDate}]]></expression>
+	</group>
+	<group name="isEnable">
+		<expression><![CDATA[$F{isEnable}]]></expression>
+	</group>
+	<group name="name">
+		<expression><![CDATA[$F{name}]]></expression>
+	</group>
+	<group name="nic">
+		<expression><![CDATA[$F{nic}]]></expression>
+	</group>
+	<group name="telephone">
+		<expression><![CDATA[$F{telephone}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="93" splitType="Stretch">
+		<element kind="staticText" uuid="d9f3bbb1-53d4-4456-86b0-8eb1fbd46fc0" x="95" y="10" width="365" height="50" fontSize="33.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Users Report]]></text>
+		</element>
+		<element kind="textField" uuid="466271d1-4d41-4e38-bb84-655693c00627" x="10" y="70" width="100" height="19" pattern="MMMMM dd, yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="210" splitType="Stretch">
+		<element kind="textField" uuid="c65336e3-d29c-4c35-b04e-bdfaff557748" x="190" y="2" width="120" height="30" fontSize="16.0">
+			<expression><![CDATA[$F{nic}]]></expression>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7325a9a3-ee4a-4d5f-a19b-148706b93eb7"/>
+		</element>
+		<element kind="textField" uuid="573368ea-d878-4a3b-bc5c-3888faa788c3" x="200" y="63" width="120" height="30" fontSize="16.0">
+			<expression><![CDATA[$F{registerDate}]]></expression>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad93d35c-cbf4-4e12-8e16-3ab32a725f44"/>
+		</element>
+		<element kind="textField" uuid="5f42bf22-fcd1-41e3-b6eb-a64061fde21c" x="191" y="33" width="120" height="30" fontSize="16.0">
+			<expression><![CDATA[$F{telephone}]]></expression>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b0c5795c-4b0f-49b7-bdf4-f2a51bc0201d"/>
+		</element>
+		<element kind="staticText" uuid="e9ba5cb2-6114-47a0-a96e-de54d3eb63e7" x="80" y="2" width="111" height="30" fontSize="16.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[NIC                 :]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7325a9a3-ee4a-4d5f-a19b-148706b93eb7"/>
+		</element>
+		<element kind="staticText" uuid="b53c75c7-c2c2-474e-ac13-2d85069a3513" x="80" y="33" width="111" height="30" fontSize="16.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Telephone     :]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b0c5795c-4b0f-49b7-bdf4-f2a51bc0201d"/>
+		</element>
+		<element kind="staticText" uuid="0607ce36-c8a8-440c-af16-950d1174df9f" x="80" y="63" width="122" height="30" fontSize="16.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Register Date :]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad93d35c-cbf4-4e12-8e16-3ab32a725f44"/>
+		</element>
+		<element kind="staticText" uuid="72cfc536-0d9a-4553-a252-df5922782b59" x="80" y="-31" width="110" height="30" fontSize="16.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Name             :]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="91fd2bea-e62d-47d2-8415-ba06a046c7c9"/>
+		</element>
+		<element kind="textField" uuid="c1682453-2941-4240-80a8-3d896fce452a" x="191" y="-31" width="120" height="30" fontSize="16.0">
+			<expression><![CDATA[$F{name}]]></expression>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="91fd2bea-e62d-47d2-8415-ba06a046c7c9"/>
+		</element>
+		<element kind="staticText" uuid="c80785f8-7477-4f8c-a152-9d940f973ca2" x="210" y="136" width="100" height="30" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[History]]></text>
+		</element>
+		<element kind="staticText" uuid="b6b1e57a-69ac-463e-8e0f-004fffd736bf" x="90" y="176" width="100" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Book]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e566352e-66e2-449d-91e5-caf04f908b14"/>
+		</element>
+		<element kind="staticText" uuid="0bd6e2d8-b86b-439f-9b0b-4b6084e87e0f" x="200" y="176" width="100" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Burrow Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4da7442f-7c35-4503-be8c-35c0658f759d"/>
+		</element>
+		<element kind="staticText" uuid="5384b07b-f18e-4304-9502-e4dc93eb2b81" x="310" y="176" width="100" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Return Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="621df173-f11e-42f1-a9fc-0371f8d004fc"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<element kind="textField" uuid="1005ced6-d4bd-4d45-a82b-1aa9e1c5beba" x="90" y="0" width="100" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{title}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e566352e-66e2-449d-91e5-caf04f908b14"/>
+			</element>
+			<element kind="textField" uuid="b8c0855e-4fcd-4b25-8caa-0b9af45f1f10" x="200" y="0" width="100" height="30">
+				<expression><![CDATA[$F{date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4da7442f-7c35-4503-be8c-35c0658f759d"/>
+			</element>
+			<element kind="textField" uuid="f3cab998-1318-4c4e-9c54-ceac0a8296cd" x="310" y="0" width="100" height="30">
+				<expression><![CDATA[$F{COLUMN_16}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="621df173-f11e-42f1-a9fc-0371f8d004fc"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="58" splitType="Stretch">
+		<element kind="textField" uuid="06946324-17d5-48e2-b05c-c1c5f053b6b8" x="227" y="21" width="100" height="16" hTextAlign="Center">
+			<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

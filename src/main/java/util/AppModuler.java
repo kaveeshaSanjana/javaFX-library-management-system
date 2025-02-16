@@ -31,5 +31,6 @@ public class AppModuler extends AbstractModule {
         bind(ReturnBookDao.class).to(ReturnBookDaoImpl.class);
         bind(FineService.class).to(FineServiceImpl.class);
         bind(FineDao.class).to(FineDaoImpl.class);
+        bind(ReportService.class).to(ReportServiceImpl.class);
     }
 }

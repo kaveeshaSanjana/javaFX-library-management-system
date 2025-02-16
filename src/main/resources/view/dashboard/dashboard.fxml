@@ -111,7 +111,7 @@
                               </ImageView>
                            </children>
                         </Pane>
-                        <Label prefHeight="38.0" prefWidth="94.0" text="Reports">
+                        <Label onMouseClicked="#reportsClickOnAction" prefHeight="38.0" prefWidth="94.0" text="Reports">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>

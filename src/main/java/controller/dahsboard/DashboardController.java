@@ -70,4 +70,12 @@ public class DashboardController {
         loader.setControllerFactory(injector::getInstance);
         boarderPainMain.getChildren().add(loader.load());
     }
+
+    public void reportsClickOnAction(MouseEvent mouseEvent) throws IOException {
+        boarderPainMain.getChildren().clear();
+        Injector injector = Guice.createInjector(AppModuler.getInstance());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/report/reportBody.fxml"));
+        loader.setControllerFactory(injector::getInstance);
+        boarderPainMain.getChildren().add(loader.load());
+    }
 }
