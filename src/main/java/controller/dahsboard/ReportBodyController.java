@@ -14,6 +14,9 @@ public class ReportBodyController {
     public TextField txtNic;
     @Inject
     ReportService reportService;
+    public void btnOnaction(MouseEvent mouseEvent) {
+
+    }
 
     public void allUserReportGenerateOnAction(ActionEvent actionEvent) {
         try {
