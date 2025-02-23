@@ -6,6 +6,7 @@ import repository.custom.FineDao;
 import util.CrudUtil;
 import util.LogedDetails;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -43,7 +44,22 @@ public class FineDaoImpl implements FineDao {
     }
 
     @Override
+    public ArrayList<FineEntity> searchAllById(String paymentId) throws SQLException {
+        ArrayList<FineEntity> fineEntities = new ArrayList<>();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM fine WHERE libraryId = ? AND paymentId LIKE ?", LogedDetails.getInstance().getLibraryID(),"%"+paymentId+"%");
+        while (rst.next()){
+            fineEntities.add(new FineEntity(rst.getInt("paymentId"),rst.getInt("retrunId"),rst.getDouble("Fine"),rst.getString("date"),rst.getInt("libraryId")));
+        }
+        return fineEntities;
+    }
+
+    @Override
     public ArrayList<FineEntity> getAll() throws SQLException {
-        return null;
+        ArrayList<FineEntity> fineEntities = new ArrayList<>();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM fine WHERE libraryId = ? ", LogedDetails.getInstance().getLibraryID());
+        while (rst.next()){
+            fineEntities.add(new FineEntity(rst.getInt("paymentId"),rst.getInt("retrunId"),rst.getDouble("Fine"),rst.getString("date"),rst.getInt("libraryId")));
+        }
+        return fineEntities;
     }
 }

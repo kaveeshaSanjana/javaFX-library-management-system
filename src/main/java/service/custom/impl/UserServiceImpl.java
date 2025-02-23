@@ -31,6 +31,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public ObservableList<User> getSearchAll(String nic) throws SQLException {
+        ObservableList<User> all = FXCollections.observableArrayList();
+        userDao.searchAllById(nic).forEach(userEntity -> {
+            all.add(modelMapper.map(userEntity, User.class));
+        });
+        return all;
+    }
+
+    @Override
     public boolean delete(String userNic) throws SQLException {
         return userDao.delete(userNic);
     }
@@ -50,4 +59,5 @@ public class UserServiceImpl implements UserService {
     public User get(String userNic) throws SQLException {
         return modelMapper.map(userDao.searchById(userNic),User.class);
     }
+
 }

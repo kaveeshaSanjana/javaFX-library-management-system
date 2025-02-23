@@ -30,6 +30,16 @@ ModelMapper modelMapper = new ModelMapper();
     }
 
     @Override
+    public ObservableList<ReturnBook> getSearchAll(String title) throws SQLException {
+        ObservableList<ReturnBook> all = FXCollections.observableArrayList();
+        returnBookDao.searchAllById(title).forEach(returnBookEntity -> {
+            all.add(modelMapper.map(returnBookEntity,ReturnBook.class));
+        });
+        return all;
+
+    }
+
+    @Override
     public ObservableList<User> getLateAllUsers() throws SQLException {
         ObservableList<User> all = FXCollections.observableArrayList();
         returnBookDao.getLateAllUsers().forEach(userEntity -> {

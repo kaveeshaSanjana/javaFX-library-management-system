@@ -44,4 +44,14 @@ public class BookServiceImpl implements BookService {
 
         return books;
     }
+
+    @Override
+    public ObservableList<Book> getSearchAllBooks(String isbn) throws SQLException {
+        ObservableList<Book> books = FXCollections.observableArrayList();
+        bookDao.searchAllById(isbn).forEach(bookEntity -> {
+            books.add(modelMapper.map(bookEntity,Book.class));
+        });
+
+        return books;
+    }
 }

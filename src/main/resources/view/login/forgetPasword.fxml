@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" prefHeight="446.0" prefWidth="366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loging.ForgotPassController">
+   <children>
+      <JFXButton fx:id="btnForget" layoutX="59.0" layoutY="240.0" onAction="#btnForgetOnAction" prefHeight="36.0" prefWidth="210.0" style="-fx-background-color: blue;" styleClass="action-button" stylesheets="@../../css/style.css" text="Forget Password" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="29.0" prefHeight="58.0" prefWidth="271.0" text="Forgot Password" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="35.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="401.0" prefHeight="26.0" prefWidth="74.0" text="New User ?" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="74.0" prefHeight="24.0" prefWidth="326.0" text="Dont worry.Lets Change your password&#10;">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsername" layoutX="63.0" layoutY="188.0" prefHeight="34.0" prefWidth="236.0" />
+      <Label layoutX="63.0" layoutY="161.0" prefHeight="26.0" prefWidth="64.0" text="Username">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="123.0" layoutY="400.0" onAction="#loginOnClick" text="Login Page">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

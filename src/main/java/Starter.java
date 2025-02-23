@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import util.AppModuler;
-
-import java.time.Instant;
-import java.time.LocalDate;
-import java.util.Date;
+import util.LogedDetails;
 
 public class Starter extends Application{
 
@@ -17,11 +14,12 @@ public class Starter extends Application{
     }
     @Override
     public void start(Stage stage) throws Exception {
-        System.out.println(new Date(System.currentTimeMillis()));
+
         Injector injector = Guice.createInjector(AppModuler.getInstance());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard/dashboard.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/logingForm.fxml"));
         loader.setControllerFactory(injector::getInstance);
         stage.setScene(new Scene(loader.load()));
+        LogedDetails.getInstance().setPastStage(stage);
         stage.show();
     }
 }

@@ -66,7 +66,7 @@ public class DashboardController {
     public void lblFineClickedAction(MouseEvent mouseEvent) throws IOException {
         boarderPainMain.getChildren().clear();
         Injector injector = Guice.createInjector(AppModuler.getInstance());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard/FineBody.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard/fineBody.fxml"));
         loader.setControllerFactory(injector::getInstance);
         boarderPainMain.getChildren().add(loader.load());
     }

@@ -21,7 +21,7 @@
             <children>
                 <Pane prefHeight="103.0" prefWidth="840.0" style="-fx-background-color: #ffffea;" HBox.hgrow="ALWAYS">
                <children>
-                      <TextField fx:id="searchField" layoutX="495.0" layoutY="30.0" prefHeight="22.0" prefWidth="160.0" promptText="Search..." styleClass="search-field">
+                      <TextField fx:id="searchField" layoutX="495.0" layoutY="30.0" onKeyTyped="#txtSearchOnTyped" prefHeight="22.0" prefWidth="160.0" promptText="Search..." styleClass="search-field">
                      <font>
                         <Font size="7.0" />
                      </font>

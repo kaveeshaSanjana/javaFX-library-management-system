@@ -67,4 +67,13 @@ public class BookBurrowServiceImpl implements BookBurrowService {
         });
         return userburrowBooks;
     }
+
+    @Override
+    public ObservableList<BurrowBook> seachAllById(String isbn) throws SQLException {
+        ObservableList<BurrowBook> burrowBooks = FXCollections.observableArrayList();
+        bookBurrowDao.searchAllById(isbn).forEach(burrowBookEntity -> {
+            burrowBooks.add(modelMapper.map(burrowBookEntity, BurrowBook.class));
+        });
+        return burrowBooks;
+    }
 }

@@ -3,14 +3,12 @@ package controller.dahsboard;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-import jakarta.persistence.Id;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.SortEvent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import service.custom.BookBurrowService;
 import util.AppModuler;
@@ -25,6 +23,8 @@ public class BurrowBodyController {
     public TableColumn colBurrower;
     public TableColumn colBurrowDate;
     public TableColumn colReturnDate;
+    public Button btnBurrowAndHandOver1;
+    public TextField txtSearch;
 
     @Inject
     private BookBurrowService bookBurrowService;
@@ -57,4 +57,12 @@ public class BurrowBodyController {
         }
     }
 
+    public void searchTextChange(KeyEvent inputMethodEvent) {
+        if (txtSearch.getText().isEmpty()){loadTable();return;}
+        try {
+            tblBurrowBook.setItems(bookBurrowService.seachAllById(txtSearch.getText()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

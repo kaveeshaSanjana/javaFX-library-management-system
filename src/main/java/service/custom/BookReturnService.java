@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 public interface BookReturnService {
     ObservableList<ReturnBook> getAll() throws SQLException;
+    ObservableList<ReturnBook> getSearchAll(String title) throws SQLException;
     ObservableList<User> getLateAllUsers() throws SQLException;
     ObservableList<Book> getLateUserAllBook(String userNic) throws SQLException;
     boolean add(ReturnBook returnBook) throws SQLException;

@@ -11,4 +11,5 @@ public interface BookService {
     boolean updateBook(Book book) throws SQLException;
     Book searchBook(String bookName);
     ObservableList<Book> getAllBooks() throws SQLException;
+    ObservableList<Book> getSearchAllBooks(String isbn) throws SQLException;
 }

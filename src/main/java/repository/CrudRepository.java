@@ -8,6 +8,7 @@ public interface CrudRepository<T,ID> {
     boolean delete(ID bookId) throws SQLException;
     boolean update(T t) throws SQLException;
     T searchById(ID id) throws SQLException;
+    ArrayList<T> searchAllById(ID id) throws SQLException;
     ArrayList<T> getAll() throws SQLException;
 }
 

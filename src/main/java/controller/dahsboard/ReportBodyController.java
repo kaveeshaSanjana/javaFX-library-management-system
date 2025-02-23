@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import net.sf.jasperreports.engine.JRException;
-import service.custom.impl.ReportService;
+import service.custom.ReportService;
 
 import java.sql.SQLException;
 

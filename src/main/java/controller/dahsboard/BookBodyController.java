@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import service.custom.BookService;
 import util.AppModuler;
@@ -75,4 +76,19 @@ public class BookBodyController {
         }
     }
 
+    public void searchFieldOnTyped(KeyEvent keyEvent) {
+        try {
+            if(searchField.getText().isEmpty()){
+                loadTable();
+                return;
+            }
+            setDetailsTOTable(searchField.getText());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    void setDetailsTOTable(String isbn) throws SQLException {
+        tblBooks.setItems(bookService.getSearchAllBooks(isbn));
+    }
 }

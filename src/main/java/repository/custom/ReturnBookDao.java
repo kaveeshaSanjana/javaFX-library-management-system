@@ -15,4 +15,5 @@ public interface ReturnBookDao extends CrudRepository<ReturnBookEntity,String> {
  Integer getRIdByIds(String nic,String isbn) throws SQLException;
  ArrayList<UserEntity> getLateAllUsers() throws SQLException;
  ArrayList<BookEntity> getLateUserAllBooks(String userNic) throws SQLException;
+ ReturnBookEntity searchById(int s) throws SQLException;
 }

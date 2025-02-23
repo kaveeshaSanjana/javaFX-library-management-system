@@ -8,7 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import dto.Book;
 import service.custom.BookReturnService;
@@ -27,6 +29,7 @@ public class ReturnBodyController {
     public TableColumn colBurrowDate;
     public TableColumn colReturnDate;
     public TableColumn colFine;
+    public TextField searchField;
 
     @Inject
     private BookReturnService bookReturnService;
@@ -51,6 +54,18 @@ private void initialize() {
     public void loadTable(){
         try {
             tblBooks.setItems(bookReturnService.getAll());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void searchOnClicked(KeyEvent keyEvent) {
+        try {
+            if(searchField.getText().isEmpty()){
+                loadTable();
+                return;
+            }
+            tblBooks.setItems(bookReturnService.getSearchAll(searchField.getText()));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

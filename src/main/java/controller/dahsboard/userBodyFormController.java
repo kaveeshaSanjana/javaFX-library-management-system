@@ -9,8 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import lombok.extern.slf4j.Slf4j;
 import service.custom.UserService;
 import util.AppModuler;
 
@@ -27,6 +30,7 @@ public class userBodyFormController {
     public TableColumn colNic;
     public TableColumn colDate;
     public TableColumn colTele;
+    public TextField searchField;
 
     Injector injector = Guice.createInjector(AppModuler.getInstance());
     @Inject
@@ -49,16 +53,24 @@ public class userBodyFormController {
         }
     }
 
-    public void btnAddUserOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnAddUserOnAction(ActionEvent actionEvent)  {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/user/addUserForm.fxml"));
         loader.setControllerFactory(injector::getInstance);
-        userAnchorPanBody.getChildren().add(loader.load());
+        try {
+            userAnchorPanBody.getChildren().add(loader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void btnUpdateUserOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnUpdateUserOnAction(ActionEvent actionEvent)  {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/user/updateAndDeleteUserForm.fxml"));
         loader.setControllerFactory(injector::getInstance);
-        userAnchorPanBody.getChildren().add(loader.load());
+        try {
+            userAnchorPanBody.getChildren().add(loader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void btnDeleteUserOnAction(ActionEvent actionEvent) {
@@ -76,4 +88,18 @@ public class userBodyFormController {
             JOptionPane.showMessageDialog(null,"Please Select User to Delete");
         }
     }
+
+    public void txtSearchOnTyped(KeyEvent keyEvent) {
+        try {
+            if(searchField.getText().isEmpty()){loadTable();return;}
+            setDetailsWhenSearch(searchField.getText());
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Fail");
+        }
+    }
+
+    void setDetailsWhenSearch(String value) throws SQLException {
+        tblUser.setItems(userService.getSearchAll(value));
+    }
+
 }

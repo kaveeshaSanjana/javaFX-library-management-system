@@ -10,7 +10,7 @@ INNER JOIN  user
 ON library_user.userNic = user.nic
 INNER JOIN burrow_book
 ON burrow_book.nic = user.nic 
-INNER JOIN return_book
+LEFT JOIN return_book
 ON return_book.usernic = user.nic
 INNER JOIN book
 ON book.isbn = burrow_book.isbn

@@ -19,7 +19,7 @@
             <children>
                 <Pane prefHeight="120.0" prefWidth="852.0" style="-fx-background-color: #ffffea;" HBox.hgrow="ALWAYS">
                <children>
-                      <TextField fx:id="searchField" layoutX="491.0" layoutY="29.0" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
+                      <TextField fx:id="searchField" layoutX="491.0" layoutY="29.0" onKeyTyped="#searchFieldOnTyped" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
                   <JFXButton alignment="CENTER_RIGHT" layoutX="724.0" layoutY="29.0" onAction="#btnAddBookOnAction" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #a0c4ff;" text="Add Book">
                      <font>
                         <Font name="Times New Roman" size="12.0" />

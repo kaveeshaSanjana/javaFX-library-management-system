@@ -29,7 +29,7 @@
                                 <Font name="Times New Roman" size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="searchField" layoutX="528.0" layoutY="31.0" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
+                        <TextField fx:id="searchField" layoutX="528.0" layoutY="31.0" onKeyTyped="#searchOnType" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
                         <Button layoutX="694.0" layoutY="33.0" onAction="#btnFineOnAction" prefHeight="26.0" prefWidth="128.0" styleClass="nav-button" text="New Fine" />
                     </children></Pane>
             </children>
@@ -40,10 +40,10 @@
             <children>
                 <TableView fx:id="tblFineBook" layoutX="30.0" layoutY="67.0" prefHeight="330.0" prefWidth="794.0">
                     <columns>
-                        <TableColumn fx:id="colBook" prefWidth="237.5999755859375" text="Book" />
-                        <TableColumn fx:id="colBurrower" prefWidth="224.0" text="Burrower" />
-                        <TableColumn fx:id="colBurrowDate" prefWidth="164.0" text="Burrow Date" />
-                        <TableColumn fx:id="colReturnDate" prefWidth="147.199951171875" text="Return Date" />
+                        <TableColumn fx:id="colPaymentID" prefWidth="237.5999755859375" text="Payment Id" />
+                        <TableColumn fx:id="colPayment" prefWidth="224.0" text="Payment Value" />
+                        <TableColumn fx:id="colDate" prefWidth="164.0" text="Date" />
+                        <TableColumn fx:id="colNic" prefWidth="147.199951171875" text="NIC" />
                     </columns>
                 </TableView>
                 <Label alignment="CENTER" layoutX="28.0" layoutY="12.0" prefHeight="38.0" prefWidth="127.0" styleClass="background-rect" text="All Records">

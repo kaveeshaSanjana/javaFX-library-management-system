@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" prefHeight="446.0" prefWidth="366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loging.InputOtpPageController">
+   <children>
+      <JFXButton fx:id="btnChange" layoutX="56.0" layoutY="342.0" onAction="#btnChangeOnAction" prefHeight="36.0" prefWidth="210.0" style="-fx-background-color: blue;" styleClass="action-button" stylesheets="@../../css/style.css" text="Change Password" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="29.0" prefHeight="58.0" prefWidth="271.0" text="Change Password" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="35.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="401.0" prefHeight="26.0" prefWidth="74.0" text="New User ?" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="74.0" prefHeight="24.0" prefWidth="326.0" text="Dont worry.Lets Change your password&#10;">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOtp" layoutX="63.0" layoutY="152.0" prefHeight="34.0" prefWidth="236.0" />
+      <Label layoutX="63.0" layoutY="125.0" prefHeight="26.0" prefWidth="64.0" text="OTP">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="123.0" layoutY="400.0" onAction="#signUpOnClick" text="Login Page">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+      <TextField fx:id="txtPasswrod" layoutX="63.0" layoutY="223.0" prefHeight="34.0" prefWidth="236.0" />
+      <Label layoutX="63.0" layoutY="196.0" prefHeight="26.0" prefWidth="64.0" text="Password">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtComfermPassword" layoutX="63.0" layoutY="288.0" prefHeight="34.0" prefWidth="236.0" />
+      <Label layoutX="63.0" layoutY="261.0" prefHeight="26.0" prefWidth="126.0" text="Comferm Password">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

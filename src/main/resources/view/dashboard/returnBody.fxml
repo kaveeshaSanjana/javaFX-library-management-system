@@ -29,7 +29,7 @@
                                 <Font name="Times New Roman" size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="searchField" layoutX="528.0" layoutY="31.0" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
+                        <TextField fx:id="searchField" layoutX="528.0" layoutY="31.0" onKeyTyped="#searchOnClicked" prefHeight="30.0" prefWidth="153.0" promptText="Search..." styleClass="search-field" />
                         <Button fx:id="btnBurrowAndHandOver1" layoutX="694.0" layoutY="33.0" onAction="#btnReturnOnAction" prefHeight="26.0" prefWidth="128.0" styleClass="nav-button" text="New Return" />
                     </children></Pane>
             </children>

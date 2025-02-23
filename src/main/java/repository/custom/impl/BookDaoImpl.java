@@ -81,6 +81,15 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
+    public ArrayList<BookEntity> searchAllById(String isbn) throws SQLException {
+        ArrayList<BookEntity> bookEntities = new ArrayList<>();
+        ResultSet resultSet = (ResultSet) CrudUtil.execute("SELECT isbn FROM library_book WHERE libraryId = ? AND isbn LIKE ?", LogedDetails.getInstance().getLibraryID(),"%"+isbn+"%");
+        while (resultSet.next()){
+            bookEntities.add(searchById(resultSet.getString("isbn")));
+        }
+        return bookEntities;    }
+
+    @Override
     public ArrayList<BookEntity> getAll() throws SQLException {
         ArrayList<BookEntity> bookEntities = new ArrayList<>();
         ResultSet resultSet = (ResultSet) CrudUtil.execute("SELECT isbn FROM library_book WHERE libraryId = ?", LogedDetails.getInstance().getLibraryID());

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public interface UserService {
     ObservableList<User> getAll() throws SQLException;
+    ObservableList<User> getSearchAll(String nic) throws SQLException;
     boolean delete(String userNic) throws SQLException;
     boolean add(User user) throws SQLException;
     boolean updateUser(User user) throws SQLException;

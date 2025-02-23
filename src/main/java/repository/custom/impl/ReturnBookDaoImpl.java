@@ -1,9 +1,6 @@
 package repository.custom.impl;
 
-import controller.fine_management.LateReturnEntity;
 import dbConnection.DBConnection;
-import dto.Book;
-import dto.User;
 import entity.BookEntity;
 import entity.ReturnBookEntity;
 import entity.UserEntity;
@@ -11,7 +8,6 @@ import repository.custom.ReturnBookDao;
 import util.CrudUtil;
 import util.LogedDetails;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -52,6 +48,26 @@ public class ReturnBookDaoImpl implements ReturnBookDao {
     }
 
     @Override
+    public ArrayList<ReturnBookEntity> searchAllById(String title) throws SQLException {
+        ArrayList<ReturnBookEntity> returnBookEntities = new ArrayList<>();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.title , u.name ,  r.date FROM return_book r LEFT JOIN book b ON b.isbn = r.isbn LEFT JOIN user u ON u.nic = r.usernic WHERE r.libraryId = ? AND isEnable = 1 AND  b.title LIKE ?", LogedDetails.getInstance().getLibraryID(),"%"+title+"%");
+        while (rst.next()){
+            returnBookEntities.add(new ReturnBookEntity(rst.getString("title"),rst.getString("name"),rst.getString("date")));
+        }
+        return returnBookEntities;
+    }
+
+    @Override
+    public ReturnBookEntity searchById(int id) throws SQLException {
+        System.out.println(id);
+        ReturnBookEntity returnBookEntity = new ReturnBookEntity();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM return_book WHERE returnId = ?",id);
+        rst.next();
+        returnBookEntity = new ReturnBookEntity(rst.getString("isbn"),rst.getString("userNic"),rst.getString("date"));
+        return returnBookEntity;
+    }
+
+    @Override
     public ArrayList<ReturnBookEntity> getAll() throws SQLException {
         ArrayList<ReturnBookEntity> returnBookEntities = new ArrayList<>();
         ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.title , u.name ,  r.date FROM return_book r LEFT JOIN book b ON b.isbn = r.isbn LEFT JOIN user u ON u.nic = r.usernic WHERE r.libraryId = ? AND isEnable = 1", LogedDetails.getInstance().getLibraryID());
@@ -63,11 +79,21 @@ public class ReturnBookDaoImpl implements ReturnBookDao {
 
     @Override
     public ArrayList<ReturnBookEntity> getUserLateReturns(String nic) throws SQLException {
-//
-        {
-            DBConnection.getInstance().getConnection().setAutoCommit(false);
-            CrudUtil.execute("SELECT b.date , u.name ,book.title,r.date AS returnDate,r.returnId FROM return_book r INNER JOIN burrow_book b ON r.isbn = b.isbn AND r.usernic = b.nic INNER JOIN user u ON u.nic = b.nic INNER JOIN book ON b.isbn = book.isbn");
-        }
+        ArrayList<ReturnBookEntity> returnBookEntities = new ArrayList<>();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.date AS burrow_date , u.name , book.title , r.date AS returnDate , r.returnId" +
+                    " FROM return_book r " +
+                    "INNER JOIN burrow_book b " +
+                    "ON r.isbn = b.isbn AND r.usernic = b.nic " +
+                    "INNER JOIN user u " +
+                    "ON u.nic = b.nic " +
+                    "INNER JOIN book " +
+                    "ON b.isbn = book.isbn" +
+                    "WHERE DATE_ADD(b.date,INTERVAL 3) < r.date");
+
+            while (rst.next()){
+                returnBookEntities.add(new ReturnBookEntity());
+            }
+
         return null;
     }
 
@@ -81,7 +107,7 @@ public class ReturnBookDaoImpl implements ReturnBookDao {
     @Override
     public ArrayList<UserEntity> getLateAllUsers() throws SQLException {
         ArrayList<UserEntity> returnBookEntities = new ArrayList<>();
-        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.date ,u.nic, u.name ,book.isbn,book.title,r.date AS returnDate,r.returnId ,r.libraryId FROM return_book r INNER JOIN burrow_book b ON r.isbn = b.isbn AND r.usernic = b.nic INNER JOIN user u ON u.nic = b.nic INNER JOIN book ON b.isbn = book.isbn WHERE r.libraryid=?", LogedDetails.getInstance().getLibraryID());
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.date ,u.nic, u.name ,book.isbn,book.title,r.date AS returnDate,r.returnId ,r.libraryId FROM return_book r INNER JOIN burrow_book b ON r.isbn = b.isbn AND r.usernic = b.nic INNER JOIN user u ON u.nic = b.nic INNER JOIN book ON b.isbn = book.isbn WHERE r.libraryid=? AND r.date > DATE_ADD(b.date , INTERVAL 3 DAY)  ", LogedDetails.getInstance().getLibraryID());
         while (rst.next()) {
             returnBookEntities.add(new UserEntity(rst.getString("name"),rst.getString("nic"),"",rst.getDate("date")));
         }
@@ -91,10 +117,11 @@ public class ReturnBookDaoImpl implements ReturnBookDao {
     @Override
     public ArrayList<BookEntity> getLateUserAllBooks(String userNic) throws SQLException {
         ArrayList<BookEntity> returnBookEntities = new ArrayList<>();
-        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.date ,u.nic, u.name ,book.isbn,book.title,r.date AS returnDate,r.returnId ,r.libraryId FROM return_book r INNER JOIN burrow_book b ON r.isbn = b.isbn AND r.usernic = b.nic INNER JOIN user u ON u.nic = b.nic INNER JOIN book ON b.isbn = book.isbn WHERE r.libraryid=? AND u.nic = ?", LogedDetails.getInstance().getLibraryID(),userNic);
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT b.date ,u.nic, u.name ,book.isbn,book.title,r.date AS returnDate,r.returnId ,r.libraryId FROM return_book r INNER JOIN burrow_book b ON r.isbn = b.isbn AND r.usernic = b.nic INNER JOIN user u ON u.nic = b.nic INNER JOIN book ON b.isbn = book.isbn WHERE r.libraryid=? AND u.nic = ? AND r.date > DATE_ADD(b.date , INTERVAL 3 DAY) ", LogedDetails.getInstance().getLibraryID(),userNic);
         while (rst.next()) {
             returnBookEntities.add(new BookEntity(rst.getString("isbn"),rst.getString("title"),rst.getString("returnDate"),"",1,1));
         }
         return returnBookEntities;
     }
+
 }

@@ -1,4 +1,4 @@
-package service.custom.impl;
+package service.custom;
 
 import net.sf.jasperreports.engine.JRException;
 

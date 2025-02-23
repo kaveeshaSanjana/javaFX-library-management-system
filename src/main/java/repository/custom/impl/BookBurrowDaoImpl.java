@@ -75,7 +75,7 @@ public class BookBurrowDaoImpl implements BookBurrowDao {
 
     @Override
     public ResultSet getByIds(String isbn,String userNic) throws SQLException {
-        return (ResultSet) CrudUtil.execute("SELECT id FROM burrow_book WHERE isbn = ? ,nic = ?",
+        return (ResultSet) CrudUtil.execute("SELECT id FROM burrow_book WHERE isbn = ? AND nic = ? AND isEnable = 1 AND libraryId = ?",
                                             isbn,userNic,LogedDetails.getInstance().getLibraryID());
     }
 
@@ -100,13 +100,25 @@ public class BookBurrowDaoImpl implements BookBurrowDao {
     }
 
     @Override
-    public BurrowBookEntity searchById(String s) throws SQLException {
+    public BurrowBookEntity searchById(String isbn) throws SQLException {
         return null;
     }
 
     @Override
+    public ArrayList<BurrowBookEntity> searchAllById(String isbn) throws SQLException {
+        ArrayList<BurrowBookEntity> burrowBookEntities = new ArrayList<>();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM burrow_book WHERE libraryId = ? AND isEnable = 1 AND isbn LIKE ?", LogedDetails.getInstance().getLibraryID(), "%"+isbn+"%");
+        while (rst.next()){
+            burrowBookEntities.add(new BurrowBookEntity(rst.getString("isbn"),
+                                                        rst.getString("nic"),
+                                                        rst.getDate("date")));
+        }
+            return burrowBookEntities;
+    }
+
+    @Override
     public ArrayList<BurrowBookEntity> getAll() throws SQLException {
-        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM burrow_book WHERE libraryid = ? AND isEnable = 1", LogedDetails.getInstance().getLibraryID());
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM burrow_book WHERE libraryId = ? AND isEnable = 1", LogedDetails.getInstance().getLibraryID());
         ArrayList<BurrowBookEntity> burrowBookEntities = new ArrayList<>();
         while (rst.next()){
             burrowBookEntities.add(new BurrowBookEntity(rst.getString("isbn"),
@@ -117,7 +129,7 @@ public class BookBurrowDaoImpl implements BookBurrowDao {
     }
     @Override
     public ArrayList<BurrowBookEntity> getUserBurrowAllBooks(String userNic) throws SQLException {
-        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM burrow_book WHERE libraryid = ? AND isEnable = 1 AND nic = ? ", LogedDetails.getInstance().getLibraryID(),userNic);
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM burrow_book WHERE libraryId = ? AND isEnable = 1 AND nic = ? ", LogedDetails.getInstance().getLibraryID(),userNic);
         ArrayList<BurrowBookEntity> burrowBookEntities = new ArrayList<>();
         while (rst.next()){
             burrowBookEntities.add(new BurrowBookEntity(rst.getString("isbn"),

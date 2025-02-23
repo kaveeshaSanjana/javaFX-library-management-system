@@ -16,4 +16,6 @@ public interface BookBurrowService extends SuperService {
     ArrayList<BurrowBook> getByDate(Date date) throws SQLException;
     ObservableList<BurrowBook> getAll() throws SQLException;
     ObservableList<BurrowBook> getUserBurrowAllBooks(String userNic) throws SQLException;
+    ObservableList<BurrowBook> seachAllById(String isbn) throws SQLException;
+
 }

@@ -77,6 +77,19 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public ArrayList<UserEntity> searchAllById(String name) throws SQLException {
+        ArrayList<UserEntity> userEntities = new ArrayList<>();
+        ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM user INNER JOIN library_user ON user.nic = library_user.usernic WHERE user.name LIKE ? AND "+sql,"%"+name+"%");
+        while (rst.next()){
+            userEntities.add(new UserEntity(rst.getString("name"),
+                    rst.getString("nic"),
+                    rst.getString("telephone"),
+                    rst.getDate("registerDate")));
+        }
+        return userEntities;
+    }
+
+    @Override
     public ArrayList<UserEntity> getAll() throws SQLException {
         ArrayList<UserEntity> userEntities = new ArrayList<>();
         ResultSet rst = (ResultSet) CrudUtil.execute("SELECT * FROM user INNER JOIN library_user ON user.nic = library_user.usernic WHERE "+sql);
