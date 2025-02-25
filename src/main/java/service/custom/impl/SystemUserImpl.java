@@ -28,4 +28,9 @@ public class SystemUserImpl implements SystemUserService {
         }
         return false;
     }
+
+    @Override
+    public SystemUser getUser(String username) throws SQLException {
+        return modelMapper.map(systemUserDao.findUserByUsername(username),SystemUser.class);
+    }
 }

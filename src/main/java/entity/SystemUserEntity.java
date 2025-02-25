@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class SystemUserEntity {
     private String username ;
     private String password ;
+    private Integer libraryId;
 }

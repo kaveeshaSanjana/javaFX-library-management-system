@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.apache.batik.util.Platform;
 import service.custom.SystemUserService;
 import util.AppModuler;
 import util.LogedDetails;
@@ -48,7 +47,12 @@ public class LogingFormController {
         Stage stage = new Stage();
 
         try {
-            if (Boolean.TRUE.equals(systemUserService.checkUsernamePassword(new SystemUser(txtUsername.getText(),txtPassword.getText())))){
+            if (Boolean.TRUE.equals(systemUserService.checkUsernamePassword(new SystemUser(txtUsername.getText(),txtPassword.getText(),0)))){
+
+                SystemUser user = systemUserService.getUser(txtUsername.getText());
+                LogedDetails.getInstance().setUserName(user.getUsername());
+                LogedDetails.getInstance().setLibraryID(user.getLibraryId());
+
                 LogedDetails.getInstance().getPastStage().close();
                 Injector injector = Guice.createInjector(AppModuler.getInstance());
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard/dashboard.fxml"));

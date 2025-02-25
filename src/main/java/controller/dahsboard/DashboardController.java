@@ -4,20 +4,24 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import util.AppModuler;
+import util.LogedDetails;
 
 import java.io.IOException;
 
 public class DashboardController {
     @FXML
     public BorderPane boarderPainMain;
+    public Label txtUsername;
 
     @FXML
     public void initialize() {
         boarderPainMain.getChildren().clear();
         try {
+            txtUsername.setText(LogedDetails.getInstance().getUserName());
             boarderPainMain.getChildren().add(FXMLLoader.load(getClass().getResource("/view/dashboard/homeBody.fxml")));
         } catch (IOException e) {
             throw new RuntimeException(e);

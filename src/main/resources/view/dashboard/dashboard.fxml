@@ -30,7 +30,7 @@
                               <Image url="@../../img/user.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" prefHeight="46.0" prefWidth="174.0" text="Kaveesha Sanjana">
+                        <Label fx:id="txtUsername" alignment="CENTER" prefHeight="46.0" prefWidth="174.0" text="Kaveesha Sanjana">
                            <font>
                               <Font name="Times New Roman" size="17.0" />
                            </font>
