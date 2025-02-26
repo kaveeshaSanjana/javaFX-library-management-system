@@ -25,7 +25,7 @@ A brief description of what this project does and who it's for. Aim for 2-3 sent
 ### Feature 1
 Description of feature 1.
 
-![Feature 1 Screenshot](screenshots/feature1.png)
+![Feature 1 Screenshot](img_readme/book_return._pagepng.jpg)
 
 ### Feature 2
 Description of feature 2.
