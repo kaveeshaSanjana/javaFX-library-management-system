@@ -4,7 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -19,7 +18,7 @@
          <children>
             <Pane prefHeight="205.0" prefWidth="792.0" style="-fx-background-color: #ffffea;">
                <children>
-                  <Label layoutX="14.0" layoutY="131.0" prefHeight="34.0" prefWidth="176.0" text="Latus Books">
+                  <Label layoutX="14.0" layoutY="131.0" prefHeight="34.0" prefWidth="176.0" text="Latest Books">
                      <font>
                         <Font name="Times New Roman" size="25.0" />
                      </font>
@@ -34,17 +33,17 @@
                         <Image url="@../../img/libraryLogoIcon.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="14.0" layoutY="57.0" prefHeight="34.0" prefWidth="266.0" text="188/79 the finans wattha,">
+                  <Label layoutX="14.0" layoutY="57.0" prefHeight="34.0" prefWidth="266.0" text="285/7/w wikramasinghe wattha,">
                      <font>
                         <Font name="Times New Roman" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="77.0" prefHeight="34.0" prefWidth="266.0" text="Wilimbula,">
+                  <Label layoutX="15.0" layoutY="77.0" prefHeight="34.0" prefWidth="266.0" text="Panadura,">
                      <font>
                         <Font name="Times New Roman" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="16.0" layoutY="94.0" prefHeight="34.0" prefWidth="266.0" text="Henegama">
+                  <Label layoutX="16.0" layoutY="94.0" prefHeight="34.0" prefWidth="266.0" text="Gall Road">
                      <font>
                         <Font name="Times New Roman" size="17.0" />
                      </font>
@@ -56,16 +55,6 @@
    </top>
    <center>
       <BorderPane prefHeight="370.0" prefWidth="792.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
-         <top>
-            <ScrollPane prefHeight="207.0" prefWidth="792.0" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets left="10.0" top="25.0" />
-               </BorderPane.margin>
-               <content>
-                  <HBox prefHeight="190.0" prefWidth="788.0" style="-fx-background-color: white;" styleClass="dashboard-cards" stylesheets="@../../css/style.css" />
-               </content>
-            </ScrollPane>
-         </top>
          <right>
             <HBox prefHeight="158.0" prefWidth="792.0" BorderPane.alignment="CENTER">
                <children>
@@ -89,7 +78,7 @@
                                                 </ImageView>
                                                 <HBox prefHeight="54.0" prefWidth="177.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="182.0" text="5000" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="182.0" text="    3" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -101,7 +90,7 @@
                                                 </HBox>
                                                 <HBox layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="177.0">
                                                    <children>
-                                                      <Label alignment="CENTER" prefHeight="45.0" prefWidth="184.0" text="Number of Books" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
+                                                      <Label alignment="CENTER" prefHeight="45.0" prefWidth="184.0" text="       Number of Books" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -135,7 +124,7 @@
                                                 </ImageView>
                                                 <HBox prefHeight="54.0" prefWidth="177.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="182.0" text="2" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="230.0" text="2" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -147,7 +136,7 @@
                                                 </HBox>
                                                 <HBox prefHeight="54.0" prefWidth="177.0">
                                                    <children>
-                                                      <Label alignment="CENTER" prefHeight="52.0" prefWidth="182.0" text="Number of Users " textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="219.0" text="Number of Users " textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -181,7 +170,7 @@
                                                 </ImageView>
                                                 <HBox prefHeight="54.0" prefWidth="177.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="171.0" text="500" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="204.0" text="500" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -193,7 +182,7 @@
                                                 </HBox>
                                                 <HBox prefHeight="54.0" prefWidth="177.0">
                                                    <children>
-                                                      <Label alignment="CENTER" prefHeight="52.0" prefWidth="182.0" text="Number Of Borrowers" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
+                                                      <Label alignment="CENTER" prefHeight="18.0" prefWidth="217.0" text="Number Of Borrowers" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
