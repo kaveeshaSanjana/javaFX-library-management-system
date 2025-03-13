@@ -3,20 +3,21 @@
 This **Library Management System** is built with **JavaFX**, designed to efficiently handle book borrowing, returns, fines, and user management with full **CRUD** operations.
 
 ## 🚀 Features
-- 📚 **Book Management** – Add, update, delete, and view books.  
-  ![Book Management](images/book_management.png)
-- 👤 **User & Customer Management** – Full CRUD operations for customers and system users.  
-  ![User Management](images/user_management.png)
-- 🔄 **Borrow & Return Management** – Add, update, delete, and view borrowed books and returns.  
-  ![Borrow & Return](images/borrow_return.png)
-- 💰 **Fine Management** – Full CRUD operations for calculating, updating, deleting, and managing late return fines.  
-  ![Fine Management](images/fine_management.png)
-- 📑 **Generate Reports** – Use **JasperReports** to create book borrowing reports.  
-  ![Report Generation](images/report_generation.png)
 - 📧 **Forgot Password OTP** – Secure **JavaMail-based OTP** system for password resets.  
-  ![OTP System](images/otp_system.png)
-- 🎨 **Custom UI Design** – Styled with **CSS** for a modern look.  
-  ![Custom UI](images/custom_ui.png)
+  ![OTP System](img_readme/firgot_password_page.jpg)
+  ![Change Password](img_readme/change_password_page.jpg)
+- 📚 **Book Management** – Add, update, delete, and view books.  
+  ![Book Management](img_readme/update_book_page.jpg)
+- 👤 **User & Customer Management** – Full CRUD operations for customers and system users.  
+  ![User Management](img_readme/User_Management.jpg)
+- 🔄 **Borrow & Return Management** – Add, update, delete, and view borrowed books and returns.  
+  ![Return](img_readme/book_return._pagepng.jpg)
+  ![Burrow](img_readme/book_burrow._pagepng.jpg)
+- 💰 **Fine Management** –  operations for calculating, deleting late return fines.  
+  ![Fine Management](img_readme/FIne_Pay.jpg)
+- 📑 **Generate Reports** – Use **JasperReports** to create book borrowing reports.  
+  ![Report Generation](img_readme/Report.jpg)
+
 - 🏗️ **Layered Architecture** – Well-structured, modular code for maintainability.  
 - 🛢️ **Hybrid Database Approach** – Uses **Hibernate** with custom **MySQL queries**.  
 
