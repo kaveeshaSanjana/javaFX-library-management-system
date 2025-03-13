@@ -52,4 +52,4 @@ This **Library Management System** is built with **JavaFX**, designed to efficie
 This project is open-source and available under the **MIT License**.
 
 ## 📬 Contact
-For any issues or feature requests, feel free to open an issue or contact me at [kavishasanjana22@gmail.com].
+For any issues or feature requests, feel free to open an issue or contact me at kavishasanjana22@gmail.com.
