@@ -32,7 +32,7 @@ This **Library Management System** is built with **JavaFX**, designed to efficie
 
 1. **Clone the repository:**  
    ```sh
-   git clone https://github.com/your-username/library-management-system.git
+   git clone https://github.com/kaveeshaSanjana/javaFX-library-management-system.git
    ```
 
 2. **Open the project in your preferred IDE (IntelliJ IDEA, Eclipse, NetBeans, etc.).**
