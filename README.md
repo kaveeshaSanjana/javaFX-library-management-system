@@ -1,181 +1,55 @@
-# Project Name
+# Library Management System (JavaFX)
 
-![Project Banner/Logo]([https://path/to/your/image.png](https://th.bing.com/th/id/R.3792d7997b8eb831e7e9198604aa294b?rik=DsRiPD7Q2w0hJw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fcustomer-service-customer-satisfaction-shaking-hands-720.png&ehk=%2fJSyEcWapeRvKMSGT1O23X9iCyUm%2buLPSBitKKFQYAo%3d&risl=&pid=ImgRaw&r=0))
-a
-## Overview
-A brief description of what this project does and who it's for. Aim for 2-3 sentences that clearly communicate the purpose and value of your project.
+This **Library Management System** is built with **JavaFX**, designed to efficiently handle book borrowing, returns, fines, and user management with full **CRUD** operations.
 
-[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-*Click the image above to watch the demo video*
+## 🚀 Features
+- 📧 **Forgot Password OTP** – Secure **JavaMail-based OTP** system for password resets.  
+  ![OTP System](img_readme/firgot_password_page.jpg)
+  ![Change Password](img_readme/change_password_page.jpg)
+- 📚 **Book Management** – Add, update, delete, and view books.  
+  ![Book Management](img_readme/update_book_page.jpg)
+- 👤 **User & Customer Management** – Full CRUD operations for customers and system users.  
+  ![User Management](img_readme/User_Management.jpg)
+- 🔄 **Borrow & Return Management** – Add, update, delete, and view borrowed books and returns.  
+  ![Return](img_readme/book_return._pagepng.jpg)
+  ![Burrow](img_readme/book_burrow._pagepng.jpg)
+- 💰 **Fine Management** –  operations for calculating, deleting late return fines.  
+  ![Fine Management](img_readme/FIne_Pay.jpg)
+- 📑 **Generate Reports** – Use **JasperReports** to create book borrowing reports.  
+  ![Report Generation](img_readme/Report.jpg)
 
-## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Technologies](#technologies)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- 🏗️ **Layered Architecture** – Well-structured, modular code for maintainability.  
+- 🛢️ **Hybrid Database Approach** – Uses **Hibernate** with custom **MySQL queries**.  
 
-## Features
+## 🛠️ Tech Stack
+- **JavaFX** for UI  
+- **Hibernate & MySQL** for data management  
+- **JasperReports** for reporting  
+- **JavaMail** for email services  
+- **CSS** for UI customization  
 
-### Feature 1
-Description of feature 1.
+## 📦 Installation & Setup
 
-![Feature 1 Screenshot](screenshots/feature1.png)
-
-### Feature 2
-Description of feature 2.
-
-![Feature 2 Screenshot](screenshots/feature2.png)
-
-### Feature 3
-Description of feature 3.
-
-![Feature 3 Screenshot](screenshots/feature3.png)
-
-## Installation
-
-### Prerequisites
-- Requirement 1 (e.g., Node.js v14+)
-- Requirement 2 (e.g., MongoDB)
-- Requirement 3 (e.g., API key for external service)
-
-### Steps
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+1. **Clone the repository:**  
+   ```sh
+   git clone https://github.com/your-username/library-management-system.git
    ```
 
-2. Install dependencies
-   ```bash
-   npm install
-   # or
-   pip install -r requirements.txt
-   ```
+2. **Open the project in your preferred IDE (IntelliJ IDEA, Eclipse, NetBeans, etc.).**
 
-3. Configure environment variables
-   ```bash
-   cp .env.example .env
-   # Edit .env with your values
-   ```
+3. **Set up the database:**  
+   - Create a MySQL database.
+   - Import the provided database schema (`database.sql`).
+   - Update database connection settings in `hibernate.cfg.xml`.
 
-4. Start the application
-   ```bash
-   npm start
-   # or
-   python app.py
-   ```
+4. **Configure Email for OTP Service:**  
+   - Update SMTP settings in the project configuration.
 
-## Usage
+5. **Run the Application:**  
+   - Compile and run the JavaFX application.
 
-### Basic Usage
-Describe how to use your project with code examples and screenshots.
+## 📜 License
+This project is open-source and available under the **MIT License**.
 
-```javascript
-// Example code
-const yourModule = require('your-module');
-const result = yourModule.doSomething();
-console.log(result);
-```
-
-![Usage Screenshot](screenshots/usage.png)
-
-### Advanced Usage
-For more complex features, provide detailed examples.
-
-## Project Structure
-```
-project-root/
-│
-├── src/             # Source files
-├── tests/           # Automated tests
-├── docs/            # Documentation files
-├── examples/        # Example implementations
-├── scripts/         # Utility scripts
-├── assets/          # Static assets
-│   └── images/      # Images used in the project
-└── README.md        # This file
-```
-
-## Technologies
-- Language (e.g., JavaScript, Python)
-- Framework (e.g., React, Django)
-- Database (e.g., MongoDB, PostgreSQL)
-- Other libraries/tools
-
-## API Documentation
-
-### Endpoint 1
-```
-GET /api/resource
-```
-Description of what this endpoint does.
-
-**Parameters:**
-- `param1`: Description of parameter 1
-- `param2`: Description of parameter 2
-
-**Response:**
-```json
-{
-  "id": 1,
-  "name": "Resource name",
-  "description": "Resource description"
-}
-```
-
-### Endpoint 2
-```
-POST /api/resource
-```
-Description of what this endpoint does.
-
-**Request Body:**
-```json
-{
-  "name": "New resource",
-  "description": "Resource description"
-}
-```
-
-**Response:**
-```json
-{
-  "id": 2,
-  "name": "New resource",
-  "description": "Resource description",
-  "createdAt": "2023-04-01T12:00:00Z"
-}
-```
-
-## Contributing
-Contributions are always welcome!
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-Please make sure to update tests as appropriate.
-
-## Roadmap
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-- [ ] Mobile application
-
-## License
-This project is licensed under the [MIT/Apache/GPL/etc.] License - see the LICENSE file for details.
-
-## Acknowledgments
-- Person/Organization 1
-- Person/Organization 2
-- Inspiration source
-- Helpful resources
+## 📬 Contact
+For any issues or feature requests, feel free to open an issue or contact me at kavishasanjana22@gmail.com.
