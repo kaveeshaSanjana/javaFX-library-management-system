@@ -7,9 +7,9 @@ import java.util.Properties;
 public class GmailSender {
 
     public static void sendEmail(String subject,String msg) {
-        String senderEmail = "contactsforbulk@gmail.com";
-        String senderPassword = "tdgi zhvi fwdo esqm";
-        String recipientEmail = "kavishasanjana22@gmail.com";
+        String senderEmail = "";
+        String senderPassword = "";
+        String recipientEmail = "";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
